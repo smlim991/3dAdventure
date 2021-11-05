@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8016119872744817577}
   - component: {fileID: 8038537962804471369}
   - component: {fileID: 8705397839570554734}
+  - component: {fileID: 1431105777335069001}
   m_Layer: 0
   m_Name: Breakable Glass
   m_TagString: BreakableGlass
@@ -126,6 +127,7 @@ MonoBehaviour:
   breakingSound: {fileID: 8300000, guid: 5c2f5ca33485fbd42a9e7af0cf292651, type: 3}
   isBroken: 0
   splinters: []
+  player: {fileID: 0}
 --- !u!82 &8038537962804471369
 AudioSource:
   m_ObjectHideFlags: 0
@@ -251,3 +253,16 @@ MonoBehaviour:
   m_VoxelSize: 0.16666667
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &1431105777335069001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6490755923291032962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: face642b483a14f8e9da44df244951ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warningMat: {fileID: 2100000, guid: 234c72ff6092b426baffe122255254cb, type: 2}

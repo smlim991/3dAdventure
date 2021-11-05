@@ -5,6 +5,7 @@ using UnityEngine;
 public class HintButton : MonoBehaviour
 {
     // Start is called before the first frame update
+
     void Start()
     {
         
@@ -13,12 +14,11 @@ public class HintButton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-
     private void OnTriggerStay(Collider other) {
-        if(other.CompareTag("Player") ){
+        if(other.CompareTag("Player")) {
             if(GlobalVar.Invisible == true){
                 GlobalVar.Invisible = false;
             }
@@ -28,4 +28,5 @@ public class HintButton : MonoBehaviour
             }
         }
     }
+    
 }
