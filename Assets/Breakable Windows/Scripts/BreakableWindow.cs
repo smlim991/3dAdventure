@@ -206,9 +206,9 @@ public class BreakableWindow : MonoBehaviour {
     /// <returns>Returns an array of all splinter gameobjects.</returns>
     public IEnumerator breakWindow()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         player.willBreak = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         if (isBroken == false)
         {
             if (allreadyCalculated == true)
