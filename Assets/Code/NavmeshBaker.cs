@@ -13,7 +13,7 @@ public class NavmeshBaker : MonoBehaviour {
     // Use this for initialization
     void Update ()
     {
-        if(!player.isGrounded && player.willBreak)
+        if(player.willBreak)
         {
             for (int i = 0; i < surfaces.Length; i++) 
             {

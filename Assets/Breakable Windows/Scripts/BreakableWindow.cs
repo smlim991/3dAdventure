@@ -208,7 +208,7 @@ public class BreakableWindow : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         player.willBreak = true;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.5f);
         if (isBroken == false)
         {
             if (allreadyCalculated == true)
