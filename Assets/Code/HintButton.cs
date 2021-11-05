@@ -17,7 +17,7 @@ public class HintButton : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerStay(Collider other) {
         if(other.CompareTag("Player") ){
             if(GlobalVar.Invisible == true){
                 GlobalVar.Invisible = false;
