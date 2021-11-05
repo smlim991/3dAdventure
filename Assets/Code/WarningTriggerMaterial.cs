@@ -16,11 +16,13 @@ public class WarningTriggerMaterial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GlobalVar.Invisible == false){
-            rend.material = defaultMat;
-        }
-        else{
-            rend.material = warningMat;
+        if(rend != null){
+            if(GlobalVar.Invisible == false){
+                rend.material = defaultMat;
+            }
+            else{
+                rend.material = warningMat;
+            }
         }
     }
 }

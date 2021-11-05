@@ -204,11 +204,10 @@ public class BreakableWindow : MonoBehaviour {
     /// Breaks the window and returns an array of all splinter gameobjects.
     /// </summary>
     /// <returns>Returns an array of all splinter gameobjects.</returns>
-    public IEnumerator breakWindow()
+    public void breakWindow()
     {
-        yield return new WaitForSeconds(0.1f);
+        //yield return new WaitForSeconds(0.1f);
         player.willBreak = true;
-        yield return new WaitForSeconds(0.1f);
         if (isBroken == false)
         {
             if (allreadyCalculated == true)
@@ -218,7 +217,7 @@ public class BreakableWindow : MonoBehaviour {
                 {
                     for (int i = 0; i < splinters.Count; i++)
                     {
-                        splinters[i].GetComponent<Rigidbody>().AddTorque(new Vector3(Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50));
+                        //splinters[i].GetComponent<Rigidbody>().AddTorque(new Vector3(Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50, Random.value > 0.5f ? Random.value * 50 : -Random.value * 50));
                     }
                 }
             }
@@ -248,7 +247,7 @@ public class BreakableWindow : MonoBehaviour {
     public IEnumerator destroyWindow()
     {
         yield return new WaitForSeconds(1f);
-        Destroy(gameObject);
+        if(gameObject != null) Destroy(gameObject);
     }
 
 
@@ -262,16 +261,16 @@ public class BreakableWindow : MonoBehaviour {
                 if (health < 0)
                 {
                     health = 0;
-                    StartCoroutine(breakWindow());
+                    breakWindow();
                 }
             }
-            else StartCoroutine(breakWindow());
+            else breakWindow();
         }
     }
 
     void OnTriggerEnter(Collider col)
     {
         gameObject.tag = "Deafult";
-        StartCoroutine(breakWindow());
+        breakWindow();
     }
 }

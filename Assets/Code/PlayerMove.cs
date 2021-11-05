@@ -32,29 +32,6 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*if(Input.GetMouseButtonDown(0)){
-            startTime = Time.time;
-        }
-        else if(Input.GetMouseButtonUp(0)){
-            if(Time.time - startTime <.2f){
-                RaycastHit hit;
-                if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition),out hit, 200)){
-                    _navMeshAgent.destination = hit.point;
-                }
-                else{
-                    RaycastHit hit;
-                    if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)){
-                        transform.LookAt(hit.point);
-                        GameObject newBullet = Instantiate(bulletPrefab, spawnPoint.position, transform.rotation);
-                        newBullet.GetComponent<Rigidbody>().AddForce(transform.forward *bulletForce);
-                    }
-                }
-            }
-        }*/
-        if(willBreak)
-        {
-            print("break");
-        }
         isGrounded = player.m_IsGrounded;
         if(!isGrounded)
         {
@@ -72,12 +49,35 @@ public class PlayerMove : MonoBehaviour
         else{
             _navMeshAgent.enabled = true;
         }
-        if(Input.GetMouseButtonDown(0)){
+        if(IsAgentOnNavMesh(gameObject) && Input.GetMouseButtonDown(0)){
             RaycastHit hit;
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)){
                 _navMeshAgent.destination = hit.point;
             }
         }
+    }
+
+    // Reference: https://stackoverflow.com/questions/45416515/check-if-disabled-navmesh-agent-player-is-on-navmesh
+    //
+    float onMeshThreshold = 3;
+    public bool IsAgentOnNavMesh(GameObject agentObject)
+    {
+        Vector3 agentPosition = agentObject.transform.position;
+        NavMeshHit hit;
+
+        // Check for nearest point on navmesh to agent, within onMeshThreshold
+        if (NavMesh.SamplePosition(agentPosition, out hit, onMeshThreshold, NavMesh.AllAreas))
+        {
+            // Check if the positions are vertically aligned
+            if (Mathf.Approximately(agentPosition.x, hit.position.x)
+                && Mathf.Approximately(agentPosition.z, hit.position.z))
+            {
+                // Lastly, check if object is below navmesh
+                return agentPosition.y >= hit.position.y;
+            }
+        }
+
+        return false;
     }
 
     void OnCollisionEnter(Collision other)
