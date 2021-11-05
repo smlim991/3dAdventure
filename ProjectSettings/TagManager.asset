@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - Glass
   - BreakableGlass
+  - Coin
   layers:
   - Default
   - TransparentFX
