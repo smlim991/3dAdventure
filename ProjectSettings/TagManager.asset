@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Trap Platform
+  - Ground
+  - Glass
+  - BreakableGlass
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 
