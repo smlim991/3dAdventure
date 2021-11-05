@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TrapPlatform : MonoBehaviour
 {
+    public float Offset = 2f;
     private void OnCollisionEnter(Collision other){
         IEnumerator DestroyPlane(){
             
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(Offset);
             Destroy(gameObject);
         
         }
