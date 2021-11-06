@@ -2418,8 +2418,8 @@ GameObject:
   - component: {fileID: 1783803006}
   - component: {fileID: 1783803005}
   - component: {fileID: 1783803004}
-  - component: {fileID: 1783803003}
   - component: {fileID: 1783803002}
+  - component: {fileID: 1783803003}
   m_Layer: 0
   m_Name: ButtonInvisibility
   m_TagString: Untagged
@@ -2439,8 +2439,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb4613382c0ff4385a72205dc7a221fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &1783803003
-CapsuleCollider:
+--- !u!64 &1783803003
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2449,10 +2449,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &1783803004
 MeshRenderer:
   m_ObjectHideFlags: 0

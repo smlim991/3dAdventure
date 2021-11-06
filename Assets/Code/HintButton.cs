@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HintButton : MonoBehaviour
 {
+    bool enabled;
     // Start is called before the first frame update
 
     void Start()
@@ -19,14 +20,19 @@ public class HintButton : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
         if(other.CompareTag("Player")) {
-            if(GlobalVar.Invisible == true){
-                GlobalVar.Invisible = false;
-            }
-            else{
+            if(!GlobalVar.Invisible)
+            {
                 GlobalVar.Invisible = true;
-
             }
         }
     }
-    
+
+    private void OnTriggerExit(Collider other) {
+        if(other.CompareTag("Player")) {
+            if(GlobalVar.Invisible)
+            {
+                GlobalVar.Invisible = false;
+            }
+        }
+    }
 }
