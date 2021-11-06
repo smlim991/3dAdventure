@@ -20,7 +20,7 @@ public class HintButton : MonoBehaviour
 
     private void OnTriggerStay(Collider other) {
         if(other.CompareTag("Player")) {
-            if(!GlobalVar.Invisible)
+            if(!GlobalVar.Invisible && GlobalVar.numKey>0)
             {
                 GlobalVar.Invisible = true;
             }
@@ -32,6 +32,7 @@ public class HintButton : MonoBehaviour
             if(GlobalVar.Invisible)
             {
                 GlobalVar.Invisible = false;
+                if(GlobalVar.numKey>0) GlobalVar.numKey-=1;
             }
         }
     }

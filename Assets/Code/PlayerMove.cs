@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerMove : MonoBehaviour
 
     public bool willBreak;
 
+    public Text keyCountOut;
+
     //float startTime;
 
     //public GameObject bulletPrefab;
@@ -26,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
         player = GetComponent<ThirdPersonCharacter>();
+        keyCountOut = GameObject.Find("KeyCountNum").GetComponent<Text>();
         mainCam = Camera.main;
     }
 
@@ -33,6 +37,7 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         isGrounded = player.m_IsGrounded;
+        keyCountOut.text = GlobalVar.numKey.ToString();
         if(!isGrounded)
         {
             _navMeshAgent.speed = 3;
