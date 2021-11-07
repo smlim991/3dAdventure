@@ -267,10 +267,4 @@ public class BreakableWindow : MonoBehaviour {
             else breakWindow();
         }
     }
-
-    void OnTriggerEnter(Collider col)
-    {
-        gameObject.tag = "Deafult";
-        breakWindow();
-    }
 }

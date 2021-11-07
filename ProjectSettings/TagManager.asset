@@ -9,6 +9,7 @@ TagManager:
   - Glass
   - BreakableGlass
   - Coin
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -54,8 +54,17 @@ public class PlayerMove : MonoBehaviour
         else{
             _navMeshAgent.enabled = true;
         }
+        if(_navMeshAgent.destination == transform.position)
+        {
+            _navMeshAgent.isStopped = true;
+        }
+
         if(IsAgentOnNavMesh(gameObject) && Input.GetMouseButtonDown(0)){
             RaycastHit hit;
+            if(_navMeshAgent.destination != transform.position)
+            {
+                _navMeshAgent.isStopped = false;
+            }
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)){
                 _navMeshAgent.destination = hit.point;
             }
