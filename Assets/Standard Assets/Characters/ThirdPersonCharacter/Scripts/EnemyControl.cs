@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
@@ -57,7 +58,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if(Vector3.Distance(transform.position, player.transform.position)<1)
             {
-                rigidBody.AddForce(10*(player.transform.position - transform.position), ForceMode.Impulse);
+                rigidBody.AddRelativeForce(20* transform.forward);
             }
         }
 
