@@ -16,8 +16,6 @@ public class RendManager : MonoBehaviour
         player = GameObject.Find("Player");
         breakableGlasses = new List<GameObject>(GameObject.FindGameObjectsWithTag("BreakableGlass"));
 
-        print(breakableGlasses.Count);
-
         for(int i=0; i<breakableGlasses.Count; i++)
         {
             int index = Random.Range(0, breakableGlasses.Count-1);
