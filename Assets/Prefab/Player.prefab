@@ -2740,7 +2740,7 @@ GameObject:
   - component: {fileID: 8436564672550108553}
   - component: {fileID: 8436564672540035685}
   m_Layer: 3
-  m_Name: AIThirdPersonController
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

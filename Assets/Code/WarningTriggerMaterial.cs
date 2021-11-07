@@ -7,9 +7,12 @@ public class WarningTriggerMaterial : MonoBehaviour
     public Material warningMat;
     Material defaultMat;
     Renderer rend;
+
+    public GameObject player;
     void Start()
     {
         rend = GetComponent<Renderer>();
+        player = GameObject.Find("Player");
         defaultMat = rend.material;
     }
 
@@ -17,11 +20,11 @@ public class WarningTriggerMaterial : MonoBehaviour
     void Update()
     {
         if(rend != null){
-            if(GlobalVar.Invisible == false){
-                rend.material = defaultMat;
+            if(GlobalVar.Invisible == true && Mathf.Abs(transform.position.y-player.transform.position.y)<1){
+                rend.material = warningMat;
             }
             else{
-                rend.material = warningMat;
+                rend.material = defaultMat;
             }
         }
     }
