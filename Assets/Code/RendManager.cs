@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class RendManager : MonoBehaviour
 {
-    public GameObject[] breakableGlasses;
+    public List<GameObject> breakableGlasses;
 
-    public Renderer[] renderers;
+    public List<Renderer> renderers;
     public GameObject player;
     public Material warningMat;
     Material defaultMat;
@@ -14,12 +14,21 @@ public class RendManager : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        breakableGlasses = GameObject.FindGameObjectsWithTag("BreakableGlass");
-        renderers = new Renderer[breakableGlasses.Length];
-        for(int i = 0; i<breakableGlasses.Length; i++)
+        breakableGlasses = new List<GameObject>(GameObject.FindGameObjectsWithTag("BreakableGlass"));
+
+        print(breakableGlasses.Count);
+
+        for(int i=0; i<breakableGlasses.Count; i++)
         {
-            print(breakableGlasses[i].GetComponent<Renderer>());
-            renderers[i] = breakableGlasses[i].GetComponent<Renderer>();
+            int index = Random.Range(0, breakableGlasses.Count-1);
+            Destroy(breakableGlasses[index].GetComponent<BreakableWindow>());
+            breakableGlasses[index].tag = "Glass";
+            breakableGlasses.Remove(breakableGlasses[index]);
+        }
+
+        foreach(GameObject glass in breakableGlasses)
+        {
+            renderers.Add(glass.GetComponent<Renderer>());
         }
         defaultMat = renderers[0].material;
     }
