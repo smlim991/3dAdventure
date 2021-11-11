@@ -204,9 +204,9 @@ public class BreakableWindow : MonoBehaviour {
     /// Breaks the window and returns an array of all splinter gameobjects.
     /// </summary>
     /// <returns>Returns an array of all splinter gameobjects.</returns>
-    public void breakWindow()
+    public IEnumerator breakWindow()
     {
-        //yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.1f);
         player.willBreak = true;
         if (isBroken == false)
         {
@@ -261,10 +261,10 @@ public class BreakableWindow : MonoBehaviour {
                 if (health < 0)
                 {
                     health = 0;
-                    breakWindow();
+                    StartCoroutine(breakWindow());
                 }
             }
-            else breakWindow();
+            else StartCoroutine(breakWindow());
         }
     }
 }

@@ -18,6 +18,7 @@ public class PlayerMove : MonoBehaviour
 
     public Text keyCountOut;
 
+
     //float startTime;
 
     //public GameObject bulletPrefab;
@@ -38,6 +39,18 @@ public class PlayerMove : MonoBehaviour
     {
         isGrounded = player.m_IsGrounded;
         keyCountOut.text = GlobalVar.numKey.ToString();
+        RaycastHit hit2;
+        if(willBreak)
+        {
+            if (Physics.Raycast(transform.position, -Vector3.up, out hit2,  3))
+            {
+                if(hit2.transform.tag == "BreakableGlass")
+                {
+                    hit2.transform.tag = "Glass";
+                    Destroy(hit2.transform.gameObject.GetComponent<BreakableWindow>());
+                }
+            }
+        }
         if(!isGrounded)
         {
             _navMeshAgent.speed = 3;
@@ -61,11 +74,11 @@ public class PlayerMove : MonoBehaviour
 
         if(IsAgentOnNavMesh(gameObject) && Input.GetMouseButtonDown(0)){
             RaycastHit hit;
-            if(_navMeshAgent.destination != transform.position)
-            {
-                _navMeshAgent.isStopped = false;
-            }
             if(Physics.Raycast(mainCam.ScreenPointToRay(Input.mousePosition), out hit, 200)){
+                if(hit.point != transform.position)
+                {
+                    _navMeshAgent.isStopped = false;
+                }
                 _navMeshAgent.destination = hit.point;
             }
         }
@@ -96,7 +109,7 @@ public class PlayerMove : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.transform.tag == "Glass" || other.transform.tag == "BreakableGlass")
+        if (willBreak && (other.transform.tag == "Glass" || other.transform.tag == "BreakableGlass"))
         {
             willBreak = false;
         }
