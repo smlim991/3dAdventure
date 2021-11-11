@@ -18,6 +18,8 @@ public class PlayerMove : MonoBehaviour
 
     public Text keyCountOut;
 
+    public Text score;
+
 
     //float startTime;
 
@@ -31,6 +33,7 @@ public class PlayerMove : MonoBehaviour
         _navMeshAgent = GetComponent<NavMeshAgent>();
         player = GetComponent<ThirdPersonCharacter>();
         keyCountOut = GameObject.Find("KeyCountNum").GetComponent<Text>();
+        score = GameObject.Find("ScoreNum").GetComponent<Text>();
         mainCam = Camera.main;
     }
 
@@ -39,6 +42,7 @@ public class PlayerMove : MonoBehaviour
     {
         isGrounded = player.m_IsGrounded;
         keyCountOut.text = GlobalVar.numKey.ToString();
+        score.text = GlobalVar.Score.ToString();
         RaycastHit hit2;
         if(willBreak)
         {
@@ -112,6 +116,13 @@ public class PlayerMove : MonoBehaviour
         if (willBreak && (other.transform.tag == "Glass" || other.transform.tag == "BreakableGlass"))
         {
             willBreak = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.CompareTag("Coin")){
+            GlobalVar.Score++;
+            Destroy(other.gameObject);
         }
     }
 }
