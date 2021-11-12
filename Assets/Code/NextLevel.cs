@@ -41,9 +41,9 @@ public class NextLevel : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             if(limit>GlobalVar.Score)
             {
-                GlobalVar.level = 0;
                 _audioSource.PlayOneShot(deathSound);
                 _transitionManager.LoadScene("DeathScene");
+                GlobalVar.level = 0;
             }
             else
             {
