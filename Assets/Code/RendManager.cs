@@ -57,15 +57,19 @@ public class RendManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(Renderer renderer in renderers)
+        foreach(GameObject glass in breakableGlasses)
         {
-            if(renderer!=null)
+            if(glass!=null && Mathf.Abs(glass.transform.position.y - player.transform.position.y)<1)
             {
-                if(GlobalVar.Invisible == true){
-                    renderer.material = warningMat;
-                }
-                else{
-                    renderer.material = defaultMat;
+                Renderer renderer = glass.GetComponent<Renderer>();
+                if(renderer!=null)
+                {
+                    if(GlobalVar.Invisible == true){
+                        renderer.material = warningMat;
+                    }
+                    else{
+                        renderer.material = defaultMat;
+                    }
                 }
             }
         }
