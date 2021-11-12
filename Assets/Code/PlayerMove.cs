@@ -27,6 +27,8 @@ public class PlayerMove : MonoBehaviour
 
     public AudioClip collectSound;
 
+    public AudioClip unlockSound;
+
     public float deathHeight = -100f;
 
     AudioSource _audioSource;
@@ -150,7 +152,7 @@ public class PlayerMove : MonoBehaviour
             Destroy(other.gameObject);
         }
         if(other.gameObject.CompareTag("Key")){
-            _audioSource.PlayOneShot(collectSound);
+            _audioSource.PlayOneShot(unlockSound);
         }
     }
 }

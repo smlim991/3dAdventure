@@ -4812,9 +4812,13 @@ PrefabInstance:
       value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 8436564672540035685, guid: d354d2f85c4004c29b25fc27fa8a1e3b, type: 3}
+      propertyPath: unlockSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c7a47db627e24194b1fc864af48a08c, type: 3}
+    - target: {fileID: 8436564672540035685, guid: d354d2f85c4004c29b25fc27fa8a1e3b, type: 3}
       propertyPath: collectSound
       value: 
-      objectReference: {fileID: 8300000, guid: 14eab2eeeda6e4461abf9d645b173947, type: 3}
+      objectReference: {fileID: 8300000, guid: 86825e515f2c34d47b45e60cb2c4c613, type: 3}
     - target: {fileID: 8436564672540140509, guid: d354d2f85c4004c29b25fc27fa8a1e3b, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8625,7 +8629,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0
