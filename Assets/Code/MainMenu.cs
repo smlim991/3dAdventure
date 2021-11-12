@@ -5,11 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public AudioClip startSound;
+    AudioSource _audioSource;
     TransitionManager _transitionManager;
     private void Start(){
         _transitionManager = FindObjectOfType<TransitionManager>();
+        _audioSource = GetComponent<AudioSource>();
     }
     public void play(){
+        _audioSource.PlayOneShot(startSound);
         _transitionManager.LoadScene("Levels");
     }
 
