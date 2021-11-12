@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
 
     public Text score;
 
-    public AudioClip coinSound;
+    public AudioClip collectSound;
 
     public float deathHeight = -20f;
 
@@ -137,9 +137,12 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Coin")){
-            _audioSource.PlayOneShot(coinSound);
+            _audioSource.PlayOneShot(collectSound);
             GlobalVar.Score++;
             Destroy(other.gameObject);
+        }
+        if(other.gameObject.CompareTag("Key")){
+            _audioSource.PlayOneShot(collectSound);
         }
     }
 }
