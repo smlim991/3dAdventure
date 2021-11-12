@@ -35,7 +35,7 @@ public class RendManager : MonoBehaviour
             int index = Random.Range(0, 2);
             if(index==0)
             {
-                Instantiate(coin, glass.transform.position, coin.transform.rotation);
+                Instantiate(coin, glass.transform.position+ new Vector3(0,0.5f,0), coin.transform.rotation);
             }
         }
         foreach(GameObject glass in glasses)
@@ -43,7 +43,7 @@ public class RendManager : MonoBehaviour
             int index = Random.Range(0, 2);
             if(index==0)
             {
-                Instantiate(coin, glass.transform.position, coin.transform.rotation);
+                Instantiate(coin, glass.transform.position + new Vector3(0,0.5f,0), coin.transform.rotation);
             }
         }
 
