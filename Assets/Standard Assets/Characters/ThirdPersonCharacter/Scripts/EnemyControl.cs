@@ -33,7 +33,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
-            if(Mathf.Abs(transform.position.y - player.transform.position.y)>1)
+            if(transform.position.y - player.transform.position.y>1)
             {
                 Destroy(gameObject);
             }
