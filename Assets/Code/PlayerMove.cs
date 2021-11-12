@@ -13,6 +13,8 @@ public class PlayerMove : MonoBehaviour
 
     public ThirdPersonCharacter player;
 
+    public GameObject enemy;
+
     public bool isGrounded;
 
     public bool willBreak;
@@ -142,6 +144,10 @@ public class PlayerMove : MonoBehaviour
         if (willBreak && (other.transform.tag == "Glass" || other.transform.tag == "BreakableGlass"))
         {
             willBreak = false;
+            for(int i=0;i<GlobalVar.level;i++)
+            {
+                Instantiate(enemy, transform.position, Quaternion.identity);
+            }
         }
     }
 

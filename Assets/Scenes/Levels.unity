@@ -5560,6 +5560,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8436564672540035685, guid: d354d2f85c4004c29b25fc27fa8a1e3b, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 5781454451971021950, guid: ce2655deed23c48ae8fe62e5bbdf621c, type: 3}
+    - target: {fileID: 8436564672540035685, guid: d354d2f85c4004c29b25fc27fa8a1e3b, type: 3}
       propertyPath: coinSound
       value: 
       objectReference: {fileID: 8300000, guid: 14eab2eeeda6e4461abf9d645b173947, type: 3}
@@ -13755,10 +13759,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 7
+  limit: 0
   player: {fileID: 0}
   playerMove: {fileID: 0}
-  level: 0
+  enemy: {fileID: 0}
+  level: 10
   deathSound: {fileID: 8300000, guid: 61f0ebb91500b46a5b9c57a2c2659907, type: 3}
 --- !u!82 &1222354720
 AudioSource:
@@ -14058,10 +14063,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 20
+  limit: 0
   player: {fileID: 0}
   playerMove: {fileID: 0}
-  level: 0
+  enemy: {fileID: 0}
+  level: 24
   deathSound: {fileID: 8300000, guid: 61f0ebb91500b46a5b9c57a2c2659907, type: 3}
 --- !u!64 &1236474386
 MeshCollider:
@@ -16832,10 +16838,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 12
+  limit: 0
   player: {fileID: 0}
   playerMove: {fileID: 0}
-  level: 0
+  enemy: {fileID: 0}
+  level: 17
   deathSound: {fileID: 8300000, guid: 61f0ebb91500b46a5b9c57a2c2659907, type: 3}
 --- !u!64 &1492326027
 MeshCollider:
