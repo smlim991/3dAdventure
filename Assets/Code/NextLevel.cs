@@ -11,6 +11,10 @@ public class NextLevel : MonoBehaviour
     public GameObject player;
     public PlayerMove playerMove;
 
+    public GameObject enemy;
+
+    public int level;
+
     AudioSource _audioSource;
     public AudioClip deathSound;
 
@@ -35,16 +39,21 @@ public class NextLevel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Player")){
-            if(limit>GlobalVar.numKey)
+            if(limit>GlobalVar.Score)
             {
                 _audioSource.PlayOneShot(deathSound);
                 _transitionManager.LoadScene("DeathScene");
+                GlobalVar.level = 0;
             }
             else
             {
+                GlobalVar.level++;
                 Destroy(gameObject);
-                playerMove.nextLevel += 15;
-                playerMove.nextLevelScore.text = "(" + playerMove.nextLevel.ToString() + ")";
+                if(GlobalVar.level<3)
+                {
+                    playerMove.nextLevel += 7;
+                    playerMove.nextLevelScore.text = "(" + playerMove.nextLevel.ToString() + ")";
+                }
             }
         }
     }
