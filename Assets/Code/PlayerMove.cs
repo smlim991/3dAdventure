@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityStandardAssets.Characters.ThirdPerson;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -21,6 +22,8 @@ public class PlayerMove : MonoBehaviour
     public Text score;
 
     public AudioClip coinSound;
+
+    public float deathHeight = -20f;
 
     AudioSource _audioSource;
 
@@ -91,6 +94,10 @@ public class PlayerMove : MonoBehaviour
                 _navMeshAgent.destination = hit.point;
             }
         }
+        if(transform.position.y < deathHeight){
+            SceneManager.LoadScene("DeathScene");
+        }
+
     }
 
     // Reference: https://stackoverflow.com/questions/45416515/check-if-disabled-navmesh-agent-player-is-on-navmesh
