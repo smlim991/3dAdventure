@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f93c1e18eba7b4fd6979a1904f286d9e
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Stone Walls
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 5b0b029dd648041cca41d2cf72ccd60b, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
