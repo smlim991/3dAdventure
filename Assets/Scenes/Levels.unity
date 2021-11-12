@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.13868597, g: 0.14481169, b: 0.17041254, a: 1}
+  m_IndirectSpecularColor: {r: 0.13799226, g: 0.14399305, b: 0.17017755, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1180,7 +1180,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 180.49991, y: -62}
+  m_AnchoredPosition: {x: 191, y: -62}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92179498
@@ -13018,7 +13018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 0
+  limit: 10
   player: {fileID: 0}
   playerMove: {fileID: 0}
 --- !u!1001 &1224402049
@@ -13222,7 +13222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 0
+  limit: 40
   player: {fileID: 0}
   playerMove: {fileID: 0}
 --- !u!64 &1236474386
@@ -15714,7 +15714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 0
+  limit: 25
   player: {fileID: 0}
   playerMove: {fileID: 0}
 --- !u!64 &1492326027
@@ -23042,11 +23042,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419267711472907954, guid: 4ab91ff2837b9440fafd756d5e8dc1bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.027
+      value: 0.071
       objectReference: {fileID: 0}
     - target: {fileID: 2419267711472907954, guid: 4ab91ff2837b9440fafd756d5e8dc1bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.355
+      value: -0.268
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab91ff2837b9440fafd756d5e8dc1bc, type: 3}
@@ -23356,11 +23356,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419267711472907954, guid: 4ab91ff2837b9440fafd756d5e8dc1bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.061
+      value: -0.026
       objectReference: {fileID: 0}
     - target: {fileID: 2419267711472907954, guid: 4ab91ff2837b9440fafd756d5e8dc1bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.47
+      value: -0.374
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab91ff2837b9440fafd756d5e8dc1bc, type: 3}

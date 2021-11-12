@@ -6,5 +6,4 @@ static class GlobalVar{
     public static bool Invisible = false;
     public static int Score = 0;
     public static int numKey = 0;
-    
 }

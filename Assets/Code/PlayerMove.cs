@@ -43,6 +43,8 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GlobalVar.numKey = 0;
+        GlobalVar.Score = 0;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         player = GetComponent<ThirdPersonCharacter>();
         keyCountOut = GameObject.Find("KeyCountNum").GetComponent<Text>();
