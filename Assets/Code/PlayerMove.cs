@@ -20,6 +20,10 @@ public class PlayerMove : MonoBehaviour
 
     public Text score;
 
+    public AudioClip coinSound;
+
+    AudioSource _audioSource;
+
 
     //float startTime;
 
@@ -35,6 +39,7 @@ public class PlayerMove : MonoBehaviour
         keyCountOut = GameObject.Find("KeyCountNum").GetComponent<Text>();
         score = GameObject.Find("ScoreNum").GetComponent<Text>();
         mainCam = Camera.main;
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -121,6 +126,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Coin")){
+            _audioSource.PlayOneShot(coinSound);
             GlobalVar.Score++;
             Destroy(other.gameObject);
         }
