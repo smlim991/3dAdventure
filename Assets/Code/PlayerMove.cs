@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
 
     public AudioClip collectSound;
 
-    public float deathHeight = -20f;
+    public float deathHeight = -100f;
 
     AudioSource _audioSource;
 

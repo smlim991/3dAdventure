@@ -11,6 +11,9 @@ public class NextLevel : MonoBehaviour
     public GameObject player;
     public PlayerMove playerMove;
 
+    AudioSource _audioSource;
+    public AudioClip deathSound;
+
     TransitionManager _transitionManager;
 
     // Start is called before the first frame update
@@ -21,6 +24,7 @@ public class NextLevel : MonoBehaviour
         xoffset = transform.position.x - player.transform.position.x;
         zoffset = transform.position.z - player.transform.position.z;
         _transitionManager = FindObjectOfType<TransitionManager>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,6 +37,7 @@ public class NextLevel : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             if(limit>GlobalVar.numKey)
             {
+                _audioSource.PlayOneShot(deathSound);
                 _transitionManager.LoadScene("DeathScene");
             }
             else
