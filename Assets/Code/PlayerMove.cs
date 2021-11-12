@@ -98,7 +98,6 @@ public class PlayerMove : MonoBehaviour
             }
         }
         if(transform.position.y < deathHeight){
-            
             _transitionManager.LoadScene("DeathScene");
         }
 
