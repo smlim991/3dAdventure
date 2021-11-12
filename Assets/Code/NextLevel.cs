@@ -11,6 +11,8 @@ public class NextLevel : MonoBehaviour
     public GameObject player;
     public PlayerMove playerMove;
 
+    public int level;
+
     AudioSource _audioSource;
     public AudioClip deathSound;
 
@@ -19,6 +21,7 @@ public class NextLevel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        level = 1;
         player =  GameObject.Find("Player");
         playerMove = (PlayerMove)FindObjectOfType(typeof(PlayerMove));
         xoffset = transform.position.x - player.transform.position.x;
@@ -37,14 +40,19 @@ public class NextLevel : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             if(limit>GlobalVar.numKey)
             {
+                level = 1;
                 _audioSource.PlayOneShot(deathSound);
                 _transitionManager.LoadScene("DeathScene");
             }
             else
             {
+                level++;
                 Destroy(gameObject);
-                playerMove.nextLevel += 15;
-                playerMove.nextLevelScore.text = "(" + playerMove.nextLevel.ToString() + ")";
+                if(level<4)
+                {
+                    playerMove.nextLevel += 15;
+                    playerMove.nextLevelScore.text = "(" + playerMove.nextLevel.ToString() + ")";
+                }
             }
         }
     }
