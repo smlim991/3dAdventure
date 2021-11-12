@@ -13,8 +13,6 @@ public class NextLevel : MonoBehaviour
 
     public GameObject enemy;
 
-    public int level;
-
     AudioSource _audioSource;
     public AudioClip deathSound;
 
@@ -43,7 +41,6 @@ public class NextLevel : MonoBehaviour
             {
                 _audioSource.PlayOneShot(deathSound);
                 _transitionManager.LoadScene("DeathScene");
-                GlobalVar.level = 0;
             }
             else
             {

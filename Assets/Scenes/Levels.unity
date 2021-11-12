@@ -9932,11 +9932,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348508904786736686, guid: 609719adbb3119e4baff6f9faf785126, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5348508904786736686, guid: 609719adbb3119e4baff6f9faf785126, type: 3}
       propertyPath: m_LocalScale.y
-      value: 50.000015
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5348508904786736686, guid: 609719adbb3119e4baff6f9faf785126, type: 3}
       propertyPath: m_LocalScale.z
@@ -9944,7 +9944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5348508904786736686, guid: 609719adbb3119e4baff6f9faf785126, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 24.2
+      value: 25.5
       objectReference: {fileID: 0}
     - target: {fileID: 5348508904786736686, guid: 609719adbb3119e4baff6f9faf785126, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9988,7 +9988,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6490755923291032962, guid: 609719adbb3119e4baff6f9faf785126, type: 3}
       propertyPath: m_TagString
-      value: Glass
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6490755923291032962, guid: 609719adbb3119e4baff6f9faf785126, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -16123,11 +16123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 0
+  limit: 10
   player: {fileID: 0}
   playerMove: {fileID: 0}
   enemy: {fileID: 0}
-  level: 10
   deathSound: {fileID: 8300000, guid: 61f0ebb91500b46a5b9c57a2c2659907, type: 3}
 --- !u!82 &1222354720
 AudioSource:
@@ -16427,11 +16426,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 0
+  limit: 24
   player: {fileID: 0}
   playerMove: {fileID: 0}
   enemy: {fileID: 0}
-  level: 24
   deathSound: {fileID: 8300000, guid: 61f0ebb91500b46a5b9c57a2c2659907, type: 3}
 --- !u!64 &1236474386
 MeshCollider:
@@ -19516,11 +19514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5ca2be695e4d93478dab1dafce3b880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limit: 0
+  limit: 17
   player: {fileID: 0}
   playerMove: {fileID: 0}
   enemy: {fileID: 0}
-  level: 17
   deathSound: {fileID: 8300000, guid: 61f0ebb91500b46a5b9c57a2c2659907, type: 3}
 --- !u!64 &1492326027
 MeshCollider:

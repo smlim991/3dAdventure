@@ -49,6 +49,7 @@ public class PlayerMove : MonoBehaviour
     {
         GlobalVar.numKey = 0;
         GlobalVar.Score = 0;
+        GlobalVar.level = 0;
         _navMeshAgent = GetComponent<NavMeshAgent>();
         player = GetComponent<ThirdPersonCharacter>();
         keyCountOut = GameObject.Find("KeyCountNum").GetComponent<Text>();
@@ -110,9 +111,6 @@ public class PlayerMove : MonoBehaviour
                 _navMeshAgent.destination = hit.point;
             }
         }
-        if(transform.position.y < deathHeight){
-            _transitionManager.LoadScene("DeathScene");
-        }
 
     }
 
@@ -148,6 +146,11 @@ public class PlayerMove : MonoBehaviour
             {
                 Instantiate(enemy, transform.position, Quaternion.identity);
             }
+        }
+
+        if(other.transform.tag == "Ground")
+        {
+            _transitionManager.LoadScene("WinningScene");
         }
     }
 
