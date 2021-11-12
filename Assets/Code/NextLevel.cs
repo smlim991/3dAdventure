@@ -10,6 +10,9 @@ public class NextLevel : MonoBehaviour
 
     public GameObject player;
     public PlayerMove playerMove;
+
+    TransitionManager _transitionManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +20,7 @@ public class NextLevel : MonoBehaviour
         playerMove = (PlayerMove)FindObjectOfType(typeof(PlayerMove));
         xoffset = transform.position.x - player.transform.position.x;
         zoffset = transform.position.z - player.transform.position.z;
+        _transitionManager = FindObjectOfType<TransitionManager>();
     }
 
     // Update is called once per frame
@@ -29,7 +33,7 @@ public class NextLevel : MonoBehaviour
         if(other.gameObject.CompareTag("Player")){
             if(limit>GlobalVar.numKey)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                _transitionManager.LoadScene("DeathScene");
             }
             else
             {
