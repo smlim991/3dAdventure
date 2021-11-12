@@ -21,6 +21,10 @@ public class PlayerMove : MonoBehaviour
 
     public Text score;
 
+    public Text nextLevelScore;
+
+    public int nextLevel;
+
     public AudioClip collectSound;
 
     public float deathHeight = -20f;
@@ -43,6 +47,9 @@ public class PlayerMove : MonoBehaviour
         player = GetComponent<ThirdPersonCharacter>();
         keyCountOut = GameObject.Find("KeyCountNum").GetComponent<Text>();
         score = GameObject.Find("ScoreNum").GetComponent<Text>();
+        nextLevelScore = GameObject.Find("NextLevelScore").GetComponent<Text>();
+        nextLevelScore.text = "(10)";
+        nextLevel = 10;
         mainCam = Camera.main;
         _audioSource = GetComponent<AudioSource>();
         _transitionManager = FindObjectOfType<TransitionManager>();

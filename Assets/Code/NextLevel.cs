@@ -9,10 +9,12 @@ public class NextLevel : MonoBehaviour
     float xoffset,zoffset;
 
     public GameObject player;
+    public PlayerMove playerMove;
     // Start is called before the first frame update
     void Start()
     {
         player =  GameObject.Find("Player");
+        playerMove = (PlayerMove)FindObjectOfType(typeof(PlayerMove));
         xoffset = transform.position.x - player.transform.position.x;
         zoffset = transform.position.z - player.transform.position.z;
     }
@@ -32,8 +34,9 @@ public class NextLevel : MonoBehaviour
             else
             {
                 Destroy(gameObject);
+                playerMove.nextLevel += 15;
+                playerMove.nextLevelScore.text = "(" + playerMove.nextLevel.ToString() + ")";
             }
-            
         }
     }
 }
