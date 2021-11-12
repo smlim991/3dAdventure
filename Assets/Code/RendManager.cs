@@ -6,22 +6,45 @@ public class RendManager : MonoBehaviour
 {
     public List<GameObject> breakableGlasses;
 
+    public List<GameObject> glasses;
+
     public List<Renderer> renderers;
     public GameObject player;
     public Material warningMat;
+
+    public GameObject coin;
     Material defaultMat;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
         breakableGlasses = new List<GameObject>(GameObject.FindGameObjectsWithTag("BreakableGlass"));
+        glasses = new List<GameObject>(GameObject.FindGameObjectsWithTag("Glass"));
 
         for(int i=0; i<breakableGlasses.Count; i++)
         {
             int index = Random.Range(0, breakableGlasses.Count-1);
             Destroy(breakableGlasses[index].GetComponent<BreakableWindow>());
             breakableGlasses[index].tag = "Glass";
+            glasses.Add(breakableGlasses[index]);
             breakableGlasses.Remove(breakableGlasses[index]);
+        }
+
+        foreach(GameObject glass in breakableGlasses)
+        {
+            int index = Random.Range(0, 2);
+            if(index==0)
+            {
+                Instantiate(coin, glass.transform.position, coin.transform.rotation);
+            }
+        }
+        foreach(GameObject glass in glasses)
+        {
+            int index = Random.Range(0, 2);
+            if(index==0)
+            {
+                Instantiate(coin, glass.transform.position, coin.transform.rotation);
+            }
         }
 
         foreach(GameObject glass in breakableGlasses)
