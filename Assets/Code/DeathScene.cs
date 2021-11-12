@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class DeathScene : MonoBehaviour
 {
+    TransitionManager _transitionManager;
+
+    private void Start(){
+        _transitionManager = FindObjectOfType<TransitionManager>();
+    }
     public void ReturnToMainMenu(){
-        SceneManager.LoadScene("MainMenu");
+        _transitionManager.LoadScene("MainMenu");
     }
 
     public void Quit1(){

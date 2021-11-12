@@ -27,6 +27,8 @@ public class PlayerMove : MonoBehaviour
 
     AudioSource _audioSource;
 
+    TransitionManager _transitionManager;
+
 
     //float startTime;
 
@@ -43,6 +45,7 @@ public class PlayerMove : MonoBehaviour
         score = GameObject.Find("ScoreNum").GetComponent<Text>();
         mainCam = Camera.main;
         _audioSource = GetComponent<AudioSource>();
+        _transitionManager = FindObjectOfType<TransitionManager>();
     }
 
     // Update is called once per frame
@@ -95,7 +98,8 @@ public class PlayerMove : MonoBehaviour
             }
         }
         if(transform.position.y < deathHeight){
-            SceneManager.LoadScene("DeathScene");
+            
+            _transitionManager.LoadScene("DeathScene");
         }
 
     }
