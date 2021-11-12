@@ -16,7 +16,10 @@ public class MainMenu : MonoBehaviour
         _audioSource.PlayOneShot(startSound);
         _transitionManager.LoadScene("Levels");
     }
-
+    public void instructions(){
+        _audioSource.PlayOneShot(startSound);
+        _transitionManager.LoadScene("Instructions");
+    }
     public void quit(){
         Application.Quit();
     }
